@@ -1,2 +1,2 @@
 # KaranSolutions
-Solutions in JavaScript/CSS/HTML - https://github.com/karan/Projects
+Solutions in JavaScript/CSS/HTML of https://github.com/karan/Projects
