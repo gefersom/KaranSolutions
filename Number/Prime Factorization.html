@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<html manifest=”manifest.manifest”>
+
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+   <script src="jquery.min.js"></script>
+   <script src="bootstrap.min.js"></script>
+    
+   <title>Fibonacci Sequence</title>
+</head>
+
+<script>
+
+   function init(){
+      var button = document.getElementById("btnCalculate");
+      button.addEventListener('click', calculatePrimeFactors, false);
+      
+      var numberInput = document.getElementById('number');
+      numberInput.addEventListener('input', changeFontSize, false);
+      numberInput.addEventListener('input', validateInputNumber, false);
+   }	
+         
+   function isPrime(number)
+   {
+   		var square = Math.sqrt(number);
+	   	var prime = false;
+	   	
+	   	if ( number == 1 )
+		   	return true;
+		   	
+		if ( number === 2 )
+			return true;
+
+      	for( var i = 2; i < number ; ++i)
+	   	{
+	   		prime = prime || ( (number % i) === 0 );
+		}
+		
+		return !prime;
+   }
+         
+   function calculatePrimeFactors()
+   {
+   		var inputNumber = document.getElementById('number');
+   		var number = inputNumber.value;
+   		var calculatedValueOutput = document.getElementById("calculatedValue");
+   		
+   		calculatedValueOutput.innerHTML = "factors";
+   		
+   		if ( number >= 1 )
+   		{
+   			var results = [];
+	
+	   		for( var n = 1; n < number ; ++n)
+	   		{
+		   		if ( isPrime(n) )
+					results.push( n );
+			}
+			
+			if ( results.length > 0)
+			{
+				calculatedValueOutput.innerHTML = "<p>" + results + "</p>"; 
+				document.writeln(calculatedValueOutput.innerHTML.style.width);
+			}
+			else
+				calculatedValueOutput.innerHTML = "It's not a prime number. "; 
+   		}
+   		else
+   		{
+            calculatedValueOutput.innerHTML = "Inform a number greater than 0.";
+   		}
+   }
+   
+   function validateInputNumber()
+   {
+	    var inputNumber= document.getElementById("number");
+		var value = inputNumber.value;
+	
+	   	if ( number.value >= 1 || value.length === 0 )
+		{
+			inputNumber.style.backgroundColor = "#FCFCFC";
+		}
+		else
+		{
+            inputNumber.style.backgroundColor = "#FFD9D9";
+		}
+   }
+
+	function changeFontSize(e)
+	{
+		var element = document.getElementById("number");
+		var value = element.value;
+		
+		if ( value.length === 0 )
+		{
+			element.style.fontSize="25px";
+		}		
+		else
+		{
+			element.style.fontSize="60px";
+		}
+	}
+   
+   window.addEventListener('load', init, false);
+</script>
+
+
+<style>
+
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background-color: #d3d3d3;
+ 	font-family: &#039;Oxygen&#039;, sans-serif;
+}
+
+h1 { 
+	font-family: &#039;Passion One&#039;, cursive; 
+	font-weight: bold; 
+}
+
+
+input[type=text]{
+	width:320px;
+	height:100px;
+	border-radius: 5px;
+	background-color:#FCFCFC;
+	border:none;
+	text-decoration: none;
+	font-size:25px;
+	text-align:center;
+}
+
+p{
+	font-weight: bold; 
+}
+
+#calculatedValueLabel{
+	font-size: 20px;
+}
+
+output{
+	border: 1px solid #D8D8D8;
+	font-size:21px;
+	background-color:#F0F0FF;
+	width:320px;
+	word-wrap: break-word;
+}
+
+</style>
+
+<body>
+
+<section class="container">
+
+	<div class="row text-center">
+		<div class="col-sm-4"></div>
+		
+		<div class="col-sm-4">
+			<div class="well">
+				<header>
+					<h1>Prime Factorization</h1>
+				</header>
+				
+				<hr />
+			
+				<div>
+				   	<p>Number:</p>
+				   	<input type="text" id="number" placeholder="Enter a number."/>
+				</div>
+				<br />
+			    <button id="btnCalculate" class="btn btn-primary">Compute Prime Factors</button>
+			
+				<hr />
+				<br />
+			    <p id="calculatedValueLabel">Prime Factors: </p>
+			    <output id="calculatedValue">factors</output>       
+		    </div>
+	    </div>
+    </div>
+    
+</section>
+   
+</body>
+
+</html>
