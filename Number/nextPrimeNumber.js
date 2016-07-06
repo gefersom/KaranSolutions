@@ -1,6 +1,10 @@
-﻿   function init(){
-      var button = document.getElementById("btnStartSearching");
-      button.addEventListener('click', calculatePrimeFactors, false);
+﻿   function init()
+   {
+      var buttonStart = document.getElementById("btnStartSearching");
+      buttonStart .addEventListener('click', startPrimeCalculation, false);
+      
+      var buttonStop = document.getElementById("btnStop");
+      buttonStop .addEventListener('click', stopPrimeCalculation, false);
       
       var numberInput = document.getElementById('number');
       numberInput.addEventListener('input', changeFontSize, false);
@@ -10,21 +14,44 @@
    function isPrime(number)
    {
    		var square = Math.sqrt(number);
-	   	var prime = false;
-	   	
+
 	   	if ( number == 1 )
 		   	return true;
 		   	
 		if ( number === 2 )
 			return true;
 
-      	for( var i = 2; i < number ; ++i)
+      	for( var i = 2; i < square; ++i)
 	   	{
-	   		prime = prime || ( (number % i) === 0 );
+	   		if ( (number % i) === 0 )
+	   		{
+	   			return false;
+	   		}
 		}
 		
-		return !prime;
+		return true;
    }
+   
+   function startPrimeCalculation()
+   {
+      	lastCalculatedNumber = 1;
+   		results = [];
+   		primeCalculation = setInterval(calculatePrimeFactors, 700);
+   		
+   		var inputNumber = document.getElementById('number');
+   		var number = inputNumber.value;
+   		
+		var numberBefore= document.getElementById("numberBefore");
+   		numberBefore.innerHTML = ": " + number;
+   }
+   
+   function stopPrimeCalculation()
+   {
+   		clearInterval(primeCalculation);
+   		lastCalculatedNumber = 1;
+   		results = [];
+   }
+
          
    function calculatePrimeFactors()
    {
@@ -32,43 +59,44 @@
    		var number = inputNumber.value;
    		var calculatedValueOutput = document.getElementById("calculatedValue");
    		
-   		calculatedValueOutput.innerHTML = "factors";
+   		calculatedValueOutput.style.fontSize = "30px";
+   		calculatedValueOutput.style.alignItems = "";
    		
-   		if ( number >= 1 )
+   		if(  number < 1 )
    		{
-   			var results = [];
-	
-	   		for( var n = 1; n < number ; ++n)
-	   		{
-		   		if ( isPrime(n) )
-					results.push( n );
-			}
-			
-			if ( results.length > 0)
-			{
-				calculatedValueOutput.innerHTML = "<p>" + results + "</p>"; 
-				document.writeln(calculatedValueOutput.innerHTML.style.width);
-			}
-			else
-				calculatedValueOutput.innerHTML = "It's not a prime number. "; 
+   			calculatedValueOutput.innerHTML = "Inform a number greater than 0.";   		
    		}
    		else
    		{
-            calculatedValueOutput.innerHTML = "Inform a number greater than 0.";
-   		}
+   			if ( lastCalculatedNumber < number )
+   			{
+	   			if ( isPrime(lastCalculatedNumber) )
+		   			results.push(lastCalculatedNumber);
+	   			
+				calculatedValueOutput.innerHTML = "<p>" + results + "</p>"; 
+	   			
+				++lastCalculatedNumber;
+			}
+			else
+			{
+				
+				stopPrimeCalculation();
+			}
+   		}            
    }
    
    function validateInputNumber()
    {
 	    var inputNumber= document.getElementById("number");
 		var value = inputNumber.value;
-	
+	 
 	   	if ( number.value >= 1 || value.length === 0 )
 		{
 			inputNumber.style.backgroundColor = "#FCFCFC";
 		}
 		else
 		{
+			stopPrimeCalculation();
             inputNumber.style.backgroundColor = "#FFD9D9";
 		}
    }

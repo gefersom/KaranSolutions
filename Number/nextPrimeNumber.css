@@ -4,29 +4,30 @@
  	background-color: #d3d3d3;
  	font-family: &#039;Oxygen&#039;, sans-serif;
 }
-
+ 
 h1 { 
 	font-family: &#039;Passion One&#039;, cursive; 
 	font-weight: bold; 
 }
 
 
-input[type=text]{
+#number{
 	width:320px;
 	height:100px;
+	text-align:center;
 }
 
 p{
 	font-weight: bold; 
 }
 
-#calculatedValueLabel{
-	font-size: 20px;
-}
-
-output{
+#calculatedValue{
 	border: 1px solid #D8D8D8;
-	font-size:21px;
+	font-size:14px;
 	background-color:#F0F0FF;
 	word-wrap: break-word;
+	width:320px;
+	min-height:100px;
+	align-items: center; /* align vertical */
+	padding:30px;
 }

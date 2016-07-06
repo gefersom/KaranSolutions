@@ -6,20 +6,14 @@
 
 <head>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bootstrap.min.css">
+   <link rel="stylesheet" href="nextPrimeNumber.css">
+   <link rel="stylesheet" href="bootstrap.min.css">
    <script src="jquery.min.js"></script>
    <script src="bootstrap.min.js"></script>
-   <script src="nextPrimeNumber.min.js"></script>
+   <script src="nextPrimeNumber.js"></script>
     
-   <title>Fibonacci Sequence</title>
+   <title>Find The Next Prime</title>
 </head>
-
-<script>
-</script>
-
-
-<style>
-</style>
 
 <body>
 
@@ -28,7 +22,7 @@
 	<div class="row text-center">
 		<div class="col-sm-2"></div>
 		
-		<div class="col-sm-10">
+		<div class="col-sm-8">
 			<div class="well">
 				<header>
 					<h1>Find The Next Prime</h1>
@@ -38,12 +32,12 @@
 			
 				<div class="row">
 					<div class="col-sm-6">
-					   	<p>After:</p>
+					   	<p>Number</p>
 					   	<input type="text" id="number" placeholder="Enter a number."/>
 				   	</div>
 					<div class="col-sm-6">	
-					    <p id="calculatedValueLabel">Next Prime: </p>
-					    <output id="calculatedValue">Next Prime</output>
+					    <p id="calculatedValueLabel">Primes before<span id="numberBefore"></span></p>
+					    <output id="calculatedValue">Primes</output>
 					</div>
 				</div>
 				<br />
@@ -51,6 +45,8 @@
 				<button id="btnStop" class="btn btn-primary">Stop</button>
 			       
 		    </div>
+		    
+    		<div class="col-sm-2"></div>
 	    </div>
     </div>
     
