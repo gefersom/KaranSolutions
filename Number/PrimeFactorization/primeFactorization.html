@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<html manifest=”manifest.manifest”>
+
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="primeFactorization.min.css">
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+   <script src="primeFactorization.js"></script>
+    
+   <title>Fibonacci Sequence</title>
+</head>
+
+<body>
+
+<section class="container">
+
+	<div class="row text-center">
+		<div class="col-sm-4"></div>
+		
+		<div class="col-sm-4">
+			<div class="well">
+				<header>
+					<h1>Prime Factorization</h1>
+				</header>
+				
+				<hr />
+			
+				<div>
+				   	<p>Number:</p>
+				   	<input type="text" id="number" placeholder="Enter a number."/>
+				</div>
+				<br />
+			    <button id="btnCalculate" class="btn btn-primary">Compute Prime Factors</button>
+			
+				<hr />
+				<br />
+			    <p id="calculatedValueLabel">Prime Factors: </p>
+			    <output id="calculatedValue">factors</output>       
+		    </div>
+	    </div>
+    </div>
+    
+</section>
+   
+</body>
+
+</html>
