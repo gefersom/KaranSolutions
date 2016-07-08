@@ -1,0 +1,32 @@
+﻿section{
+	text-align:center;
+}
+
+img{
+	width:200px;
+	height:200px;
+}
+
+/*-------------------------------------------*/
+
+#areaWidth, #areaHeight, #tileWidth, #tileHeight, #tileCost {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#inputAreaWidth, #inputAreaHeight, #inputTileWidth, #inputTileHeight, #inputTileCost{
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  text-align:center;
+}
+
+/*-------------------------------------------*/
+
+output{
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  text-align:center;
+}

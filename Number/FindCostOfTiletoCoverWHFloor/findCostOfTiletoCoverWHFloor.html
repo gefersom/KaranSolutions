@@ -1,0 +1,92 @@
+﻿  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+     
+     <link rel="stylesheet" href="findCostOfTiletoCoverWHFloor.css">
+     <script src="findCostOfTiletoCoverWHFloor.js"></script>
+  
+  
+  <title>Find Cost of Tile to Cover W x H Floor</title>
+  </head>
+  
+  <body>
+  
+  <div class="container">
+      <div class="row">
+          <div class="center-block">
+              <section class="well">
+                  <header>
+                      <h1> Find Cost of Tile to Cover W x H Floor </h1>
+                  </header>
+                  <article>
+                      <div class="row">
+                          <div class="center-block">
+                          
+                              <div class="col-sm-2"></div>
+                              
+                              <div class="col-sm-8">
+                               <hr /> 
+                                  <div class="row">
+                                  <div class="col-sm-12">
+                                       <p>
+                                            <span id="areaWidth">Aera Width</span>
+                                            <input type="text" id="inputAreaWidth" placeholder="Width" required/>
+                                       </p>
+                                       
+                                       <p>
+                                            <span id="areaHeight">Area Height</span>
+                                            <input type="text" id="inputAreaHeight" placeholder="Height" required/>
+                                       </p>
+                                  </div>
+                                  </div>
+                                  
+                                  <hr />
+                                  <div class="row">
+                                  <div class="col-sm-12 ">
+                                        <p>
+                                            <span id="tileWidth">Tile Width </span>                  
+                                            <input type="text" id="inputTileWidth" placeholder="Width" required/>
+                                        </p>
+                                       
+                                        <p>
+                                            <span id="tileHeight">Tile Height</span>
+                                            <input type="text" id="inputTileHeight" placeholder="Height" required/>
+                                        </p>
+                                        <p>                                    
+                                            <span id="tileCost">Tile Cost </span>
+                                            <input type="text" id="inputTileCost" placeholder="Cost" required/>
+                                        </p>
+                                  </div>
+                                  </div>
+                                  
+                                  <hr />
+                                  <div class="row">
+                                  <div class="col-sm-12 ">
+                                    <button type="button" id="btnCalculate" class="btn btn-primary"> Calculate Cost </button>
+                                  </div>
+                                  </div>
+                                  <hr />
+                                  
+                                  <div class="row">
+                                  <div class="col-sm-12 ">
+                                    <output> <strong> Total Cost: <span id="totalCost">0,0</span> </strong></output>
+                                  </div>
+                                  </div>
+							</div>
+							<div class="col-sm-2"></div>
+                           </div>
+                     </div>	
+                     </div>
+                     </div>
+                 </article>
+              </section>
+          </div>
+      </div>
+  </div>
+  </body>
+  </html>
